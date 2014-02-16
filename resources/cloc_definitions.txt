@@ -138,6 +138,10 @@ CoffeeScript
     filter remove_inline #.*$
     extension coffee
     3rd_gen_scale 2.00
+LESS
+    filter call_regexp_common C
+    extension less
+    3rd_gen_scale 1.00
 CSS
     filter call_regexp_common C
     extension css

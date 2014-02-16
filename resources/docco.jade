@@ -5,7 +5,18 @@ html
   head
     title=title
     meta( http-equiv='Content-Type', content='text/html', charset='UTF-8')
+    link( rel='stylesheet', media='all', href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" )
     link( rel='stylesheet', media='all', href="#{root_path}docco.css" )
+    script( src="#{root_path}prettify/prettify.js" )
+    link( rel='stylesheet', media='all', href="#{root_path}prettify/prettify.css" )
+    script
+      window.addEventListener('DOMContentLoaded', function(e) {
+        var items = document.querySelectorAll('.source-block, .code-block');
+        Array.prototype.forEach.call(items, function (item) {
+          item.classList.add('prettyprint');
+        });
+        prettyPrint();
+      });
   body
     div#container
       div#background
