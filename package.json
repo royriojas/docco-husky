@@ -35,7 +35,8 @@
     "jade": "0.17.0",
     "gravatar": "1.0.3",
     "underscore": "1.2.x",
-    "walk": "2.0.2"
+    "walk": "2.0.2",
+    "escape-html": "~1.0.1"
   },
   "directories": {
     "lib": "./lib"
@@ -46,9 +47,6 @@
   },
   "scripts": {
     "install": "scripts/install.sh"
-  },
-  "devDependencies": {
-    "escape-html": "~1.0.1"
   },
   "optionalDependencies": {}
 }
