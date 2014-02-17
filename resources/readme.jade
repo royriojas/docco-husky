@@ -59,17 +59,42 @@ html
                 if package_json.repository && package_json.repository.type && package_json.repository.url
                   h3 Repository
                   p #{package_json.repository.type} - #{package_json.repository.url}
-                h3 Dependencies 
-                ul
-                  each dep, key in package_json.dependencies
-                    li 
-                      b #{key} 
-                      span #{dep}
+            td#content.code
+              div
+                !{content}
               p
                 if code_stats
                   h3 Stats
                   pre.code_stats !{code_stats}
-            td#content.code !{content}  
+              h3 Files
+              ul#artifacts
+                - var sources = context.sources || [];
+                - var sources = sources.map(function (entry) { return { name: path.basename(entry), path: entry } });
+                each source in sources
+                  - var base_path = relative_base(source.path, context)
+                  - var base_path_padded = base_path.replace(new RegExp("/", 'g'), "/");
+                  - var this_class = (source == file_path) ? "selected" : "";
+
+                  li
+                    a.source(class="#{this_class}", href="#{root_path}#{source.path}.html")
+                      span.file_name #{source.name}
+              - var deps = Object.keys(package_json.dependencies).length > 0;
+              if deps
+                h3 Dependencies
+                ul
+                  each dep, key in package_json.dependencies
+                    li
+                      b #{key}:
+                      span #{dep}
+              - deps = Object.keys(package_json.devDependencies).length > 0;
+              if deps
+                h3 Dev Dependencies
+                ul
+                  each dep, key in package_json.devDependencies
+                    li
+                      b #{key}:
+                      span #{dep}
+
       if context.config.show_timestamp
         div#generated generated #{new Date()}  
 

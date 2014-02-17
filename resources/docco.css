@@ -314,16 +314,18 @@ code {
   margin: 0;
   padding: 0;
 }
-.docs pre.code_stats {
+pre.code_stats {
   padding: 0;
   margin: 0;
   overflow: auto;
-  font-size: 0.6em;
-  font-family: Menlo, Consolas, Monaco;
 }
 .docs p {
   color: #241F1F;
 }
 .docs code {
   font-size: 0.8rem;
+}
+#artifacts {
+  -webkit-columns: 3;
+  -moz-columns: 3;
 }
