@@ -1,0 +1,464 @@
+/*
+ KWL Base mixins
+*/
+
+.background-clip(@bclip: content-box) {
+  -webkit-background-clip: @bclip;
+  -ms-background-clip: @bclip;
+  -moz-background-clip: @bclip;
+  background-clip: @bclip;
+}
+
+.background-size(@args) {
+  -webkit-background-size: @args;
+  background-size: @args;
+}
+
+.center-element(@width, @height) {
+  width: @width;
+  height: @height;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  margin-left: -(@width/2);
+  margin-top: -(@height/2);
+}
+
+.appearance(@appearance: none) {
+  -webkit-appearance: @appearance;
+  -moz-appearance : @appearance;
+  -ms-appearance : @appearance;
+}
+
+.border-radius(@radius:3px) {
+  -webkit-border-radius : @radius;
+  -moz-border-radius : @radius;
+  border-radius : @radius;
+}
+
+.rounded(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius : @topright;
+  -webkit-border-bottom-right-radius : @bottomright;
+  -webkit-border-bottom-left-radius : @bottomleft;
+  -webkit-border-top-left-radius : @topleft;
+  -moz-border-radius-topright : @topright;
+  -moz-border-radius-bottomright : @bottomright;
+  -moz-border-radius-bottomleft : @bottomleft;
+  -moz-border-radius-topleft : @topleft;
+  border-top-right-radius : @topright;
+  border-bottom-right-radius : @bottomright;
+  border-bottom-left-radius : @bottomleft;
+  border-top-left-radius : @topleft;
+}
+
+.box-shadow(@arguments) {
+  -webkit-box-shadow : @arguments;
+  -moz-box-shadow : @arguments;
+  -ms-box-shadow: @arguments;
+  box-shadow : @arguments;
+}
+
+.box-shadow-dual(@shadow1, @shadow2) {
+  -webkit-box-shadow : @shadow1, @shadow2;
+  -moz-box-shadow : @shadow1, @shadow2;
+  -ms-box-shadow: @shadow1, @shadow2;
+  box-shadow : @shadow1, @shadow2;
+}
+
+.text-shadow(@arguments) {
+  -webkit-text-shadow : @arguments;
+  -moz-text-shadow : @arguments;
+  -ms-text-shadow: @arguments;
+  text-shadow : @arguments;
+}
+
+.text-stroke(@arguments) {
+  -webkit-text-stroke : @arguments;
+  -moz-text-stroke : @arguments;
+  -ms-text-stroke: @arguments;
+  text-stroke : @arguments;
+}
+
+.transition-all(@duration: 0.5s, @ease: ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -ms-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+
+.transition-transform(@duration:0.5s, @ease: ease-out) {
+  -webkit-transition: -webkit-transform @duration @ease;
+  -moz-transition: -moz-transform @duration @ease;
+  -ms-transition: -ms-transform @duration @ease;
+  transition: transform @duration @ease;
+}
+
+.transition-transform-dual(@duration: 0.5s, @ease: ease-out, @extra-transform) {
+  -webkit-transition: -webkit-transform @duration @ease, @extra-transform;
+  -moz-transition: -moz-transform @duration @ease, @extra-transform;
+  -ms-transition: -ms-transform @duration @ease, @extra-transform;
+  transition: transform @duration @ease, @extra-transform;
+}
+
+.transition(@args) {
+  -webkit-transition:@args;
+  -moz-transition:@args;
+  -ms-transition:@args;
+  transition:@args;
+}
+
+.animation-name(@animation-name : empty) {
+  -webkit-animation-name: @animation-name;
+  -moz-animation-name: @animation-name;
+  -ms-animation-name: @animation-name;
+  -o-animation-name: @animation-name;
+  animation-name: @animation-name;
+}
+
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  -moz-animation-duration: @duration;
+  -ms-animation-duration: @duration;
+  -o-animation-duration: @duration;
+  animation-duration: @duration;
+}
+
+.animation-delay(@delay: 0) {
+  -webkit-animation-delay: @delay;
+  -moz-animation-delay: @delay;
+  -o-animation-delay: @delay;
+  -ms-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+.animation-props(@duration: .5s, @delay: 0, @mode : both, @ease: ease-out) {
+  .animation-duration(@duration);
+
+  .animation-delay(@delay);
+
+  -webkit-animation-fill-mode: @mode;
+  -webkit-animation-easing: @ease;
+
+
+  -moz-animation-fill-mode: @mode;
+  -moz-animation-easing: @ease;
+
+
+  -ms-animation-fill-mode: @mode;
+  -ms-animation-easing: @ease;
+
+
+  -o-animation-fill-mode: @mode;
+  -o-animation-easing: @ease;
+
+
+  animation-fill-mode: @mode;
+  animation-easing: @ease;
+}
+
+.anim(@arguments) {
+  -moz-animation: @arguments;
+  -o-animation: @arguments;
+  -webkit-animation: @arguments;
+  animation: @arguments;
+}
+
+.animation(@name, @duration: .5s, @delay: 0, @mode : both, @ease: ease-out ) {
+  .animation-name(@name);
+  .animation-props(@duration, @delay, @mode, @ease);
+}
+
+.animation-iteration-count(@count:0) {
+  -webkit-animation-iteration-count:@count;
+  -moz-animation-iteration-count:@count;
+  -ms-animation-iteration-count:@count;
+  -o-animation-iteration-count:@count;
+  animation-iteration-count:@count;
+}
+
+.size(@width: 5px, @height: 5px) {
+  height: @height;
+  width : @width;
+}
+
+.gradient( @from : #fff, @to : #000 ) {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to)); /* Chrome, Safari 4+ */
+  background-image: -webkit-linear-gradient(top, @from, @to); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+  background-image:    -moz-linear-gradient(top, @from, @to); /* Firefox 3.6-15 */
+  background-image:      -o-linear-gradient(top, @from, @to); /* Opera 11.10-12.00 */
+  background-image:         linear-gradient(to bottom, @from, @to); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.50+ */
+}
+
+.transform(@arguments) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+
+.backface-visibility (@visibility: hidden) {
+  -webkit-backface-visibility : @visibility;
+  -moz-backface-visibility : @visibility;
+  -ms-backface-visibility : @visibility;
+  backface-visibility : @visibility;
+}
+
+.backface-visibility (@visibility: hidden, important) {
+  -webkit-backface-visibility : @visibility !important;
+  -moz-backface-visibility : @visibility !important;
+  -ms-backface-visibility : @visibility !important;
+  backface-visibility : @visibility !important;
+}
+
+.perspective(@arguments: 1000px) {
+  -webkit-perspective: @arguments;
+  -moz-perspective: @arguments;
+  -ms-perspective: @arguments;
+  perspective: @arguments;
+}
+
+.box-sizing (@bs: border-box) {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+.placeholder-color(@color: @grayLight) {
+  :-moz-placeholder {
+    color: @color;
+  }
+  :-webkit-input-placeholder {
+    color: @color;
+  }
+  :-ms-input-placeholder {
+    color: @color;
+  }
+}
+
+.transform-style(@args: preserve-3d) {
+  -webkit-transform-style:@args;
+  -moz-transform-style: @args;
+  -ms-transform-style: @args;
+  transform-style: @args;
+}
+
+.transform-origin(@args: 50% 50%) {
+  -webkit-transform-origin: @args;
+  -moz-transform-origin: @args;
+  -ms-transform-origin: @args;
+  transform-origin: @args;
+}
+
+.user-select(@value: none) {
+  -webkit-user-select: @value;
+  -ms-user-select: @value;
+  -moz-user-select: @value;
+}
+
+.box-reflect (@where: below, @distance: 5px, @amount: 25%) {
+	-webkit-box-reflect: @where @distance -webkit-linear-gradient(top, rgba(0, 0, 0, 0) (100% - @amount), #fff 100%);
+	-moz-box-reflect: @where @distance -moz-linear-gradient(top, rgba(0, 0, 0, 0) (100% - @amount), #fff 100%);
+	-o-box-reflect: @where @distance -o-linear-gradient(top, rgba(0, 0, 0, 0) (100% - @amount), #fff 100%);
+	-ms-box-reflect: @where @distance -ms-linear-gradient(top, rgba(0, 0, 0, 0) (100% - @amount), #fff 100%);
+	box-reflect: @where @distance linear-gradient(top, rgba(0, 0, 0, 0) (100% - @amount), #fff 100%);
+}
+
+.pointer-events(@mode: none) {
+  pointer-events:@mode;
+  -ms-pointer-events:@mode;
+  -moz-pointer-events:@mode;
+}
+
+// Fix for webkit based browsers issues
+// http://johanbrook.com/design/css/a-fix-for-antialiasing-issues-in-webkit-browsers/
+
+.fix-for-antialiasing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.font-smoothing(@antialiased:antialiased) {
+  -webkit-font-smoothing: @antialiased;
+  -moz-font-smoothing: @antialiased;
+  font-smoothing: @antialiased;
+}
+
+.display-flex() {
+  display:-ms-flexbox;
+  display:-webkit-box;
+  // This is not yet fully supported in chrome.
+  // the missing parts are :
+  //   -webkit-flex-align
+  //   -webkit-flex-pack
+  //
+  //display:-webkit-flex;
+  display:-moz-box;
+}
+
+.flex-orient(@orient: horizontal) {
+  -webkit-box-orient: @orient;
+  -moz-box-orient:@orient;
+  .flex-orient-inner(@orient);
+}
+
+.flex-orient-inner(horizontal) {
+  -webkit-flex-direction:row;
+  -ms-flex-direction:row;
+}
+
+.flex-orient-inner(vertical) {
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+}
+
+.flex-center-center() {
+  .flex-align(center);
+  .flex-pack(center);
+}
+
+.flex-align(@align:start) {
+  -webkit-box-align:@align;
+  -moz-box-align:@align;
+  -ms-flex-align:@align;
+  // This is not yet fully supported in chrome.
+  // the missing parts are :
+  //   -webkit-flex-align
+  //   -webkit-flex-pack
+  //
+  //-webkit-flex-align:@align;
+
+}
+
+.flex-pack(@pack:start) {
+  -webkit-box-pack:@pack;
+  -moz-box-pack:@pack;
+  -ms-flex-pack:@pack;
+  // This is not yet fully supported in chrome.
+  // the missing parts are :
+  //   -webkit-flex-align
+  //   -webkit-flex-pack
+  //
+  //-webkit-flex-pack:@pack;
+}
+
+.flex(@unit: 1) {
+  -moz-box-flex:@unit;
+  -webkit-box-flex:@unit;
+  // This is not yet fully supported in chrome.
+  // the missing parts are :
+  //   -webkit-flex-align
+  //   -webkit-flex-pack
+  //
+  //-webkit-flex:@unit;
+  -ms-flex:@unit;
+}
+
+.bg-alpha-mask-overlay(@color:rgba(0,0,0,0)) {
+  background: @color -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(73,73,73,0.65) 100%); /* FF3.6+ */
+  background: @color -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(73,73,73,0.65))); /* Chrome,Safari4+ */
+  background: @color -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(73,73,73,0.65) 100%); /* Chrome10+,Safari5.1+ */
+  background: @color -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(73,73,73,0.65) 100%); /* Opera 11.10+ */
+  background: @color -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(73,73,73,0.65) 100%); /* IE10+ */
+  background: @color linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(73,73,73,0.65) 100%); /* W3C */
+}
+
+.color-for-text (@background, @lightColor, @darkColor) when (luma(@background) < 70%),(luma(@background) = 70%) {
+  color: @darkColor;
+}
+
+.color-for-text (@background, @lightColor, @darkColor) when (luma(@background) > 70%) {
+  color: @lightColor;
+}
+
+.shadow-for-text (@background, @lightColor, @darkColor) when (luma(@background) < 70%),(luma(@background) = 70%) {
+  .text-shadow(@lightColor);
+}
+
+.shadow-for-text (@background, @lightColor, @darkColor) when (luma(@background) > 70%) {
+  .text-shadow(@darkColor);
+}
+
+.hidden() {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden-focusable() {
+  .visuallyhidden();
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible() {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.visible-hack(){
+  display: block !important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.scrollable-section() {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow: auto;
+}

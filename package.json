@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "coffee-script": "latest",
-    "dox": "0.1.2",
+    "dox": "git://github.com/royriojas/dox",
     "jade": "0.17.0",
     "gravatar": "1.0.3",
     "underscore": "1.2.x",
@@ -47,6 +47,8 @@
   "scripts": {
     "install": "scripts/install.sh"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "escape-html": "~1.0.1"
+  },
   "optionalDependencies": {}
 }
