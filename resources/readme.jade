@@ -20,8 +20,18 @@ html
     meta( http-equiv='Content-Type', content='text/html', charset='UTF-8')
     link( rel='stylesheet', media='all', href="#{root_path}docco.css" )
     link( rel='stylesheet', media='all', href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" )
+    script( src="#{root_path}assets/prettify.js" )
+    link( rel='stylesheet', media='all', href="#{root_path}assets/prettify.css" )
+    script
+      window.addEventListener('DOMContentLoaded', function(e) {
+        var items = document.querySelectorAll('.source-block, .code-block');
+        Array.prototype.forEach.call(items, function (item) {
+          item.classList.add('prettyprint');
+        });
+        prettyPrint();
+      });
   body
-    div#container
+    div#container.readme
       div#background
       if context.sources.length > 0
         include includes/menu
@@ -65,7 +75,7 @@ html
               p
                 if code_stats
                   h3 Stats
-                  pre.code_stats !{code_stats}
+                  pre.code-block !{code_stats}
               h3 Files
               ul#artifacts
                 - var sources = context.sources || [];

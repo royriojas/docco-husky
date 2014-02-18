@@ -96,24 +96,7 @@ h1 {
 #content {
   padding-left: 2.5em;
 }
-#content pre {
-  margin: 1em 0;
-  background-color: #EEE;
-  border: 1px solid #DDD;
-  padding: 5px;
 
-  overflow: auto;
-  -webkit-box-shadow: rgba(0,0,0,0.07) 0 1px 2px inset;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-#content pre code {
-  padding: 0!important;
-
-  background-color: #EEE!important;
-  border: none!important;
-}
 #jump_to, #jump_page {
   background: white;
   -webkit-box-shadow: 0 0 25px #777; -moz-box-shadow: 0 0 25px #777;
@@ -199,6 +182,12 @@ td.docs, th.docs {
   padding: 0 0.2em;
 }
 
+.readme code{
+  background: #f8f8ff;
+  border: 1px solid #dedede;
+  padding: 0 0.2em;
+}
+
 pre.code-block {
   background: rgba(255, 251, 247, 0.63);
   border-left: 7px solid rgb(156, 198, 211);
@@ -206,6 +195,7 @@ pre.code-block {
   padding: .5em 1em;
   white-space: pre;
   box-shadow:5px 4px 20px rgba(170, 170, 170, 0.7);
+  margin-bottom: 1em;
 }
 
 .docs .dox {
@@ -297,8 +287,19 @@ tbody {
   }
 }
 
+.readme {
+  tbody {
+    tr:hover {
+      td {
+        background: none;
+      }
+
+    }
+  }
+}
+
 pre, tt, code {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family:  Monaco, Consolas, "Lucida Console", monospace;
   margin: 0; padding: 0;
 }
