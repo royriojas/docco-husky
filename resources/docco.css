@@ -254,6 +254,17 @@ pre.code-block {
 .docs .dox .dox_type {
   font-style: italic;
 }
+.docs p {
+  margin-top: 0;
+}
+.docs h1,
+.docs h2,
+.docs h3,
+.docs h4,
+.docs h5,
+.docs h6 {
+  margin-top: 0;
+}
 .pilwrap {
   position: relative;
 }
