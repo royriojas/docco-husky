@@ -170,11 +170,12 @@ h2 {
   color: #4985b4;
 }
 #jump_page .source:hover {
-  background: #4985b4;
+  background: #59a4dd;
   color: #fff;
 }
 #jump_page .selected {
-  font-weight: bold;
+  background: #4985b4;
+  color: #fff;
 }
 #jump_page .source .base_path {
   display: block;
