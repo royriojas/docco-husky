@@ -23,9 +23,9 @@
  *    `:before` to contain the top-margins of child elements.
  */
 html {
+  box-sizing: border-box;
   font-size: 15px;
 }
-html,
 html * {
   box-sizing: border-box;
 }
@@ -34,6 +34,7 @@ body {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
   margin: 0;
   padding: 0;
+  line-height: 1.7em;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -49,7 +50,6 @@ a:visited {
 }
 p {
   margin: .8em 0 .8em 0;
-  line-height: 1.466666em;
 }
 h1,
 h2,
@@ -86,6 +86,12 @@ h3 {
 }
 h2 {
   font-size: 2rem;
+}
+ul {
+  margin-bottom: 1em;
+}
+ul li {
+  margin-bottom: .6em;
 }
 #container {
   position: relative;
@@ -129,7 +135,7 @@ h2 {
   vertical-align: middle;
 }
 #content {
-  padding-left: 2.5em;
+  padding: 2em 2.5em;
 }
 #jump_to,
 #jump_page {
@@ -187,9 +193,6 @@ h2 {
   margin-right: 2px;
   margin-leftl: 2px;
 }
-#page {
-  padding-top: 40px;
-}
 table td {
   border: 0;
   outline: 0;
@@ -212,16 +215,19 @@ th.docs {
   margin: 15px 0 15px;
   padding-left: 15px;
 }
-.docs p tt,
-.docs p code {
-  background: #f8f8ff;
-  border: 1px solid #dedede;
-  padding: 0 0.2em;
+pre,
+tt,
+code {
+  font-size: 0.8rem;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  margin: 0;
+  padding: 0;
 }
-.readme code {
+tt,
+code {
   background: #f8f8ff;
   border: 1px solid #dedede;
-  padding: 0 0.2em;
+  padding: .1em 0.3em;
 }
 pre.code-block {
   background: rgba(255, 251, 247, 0.63);
@@ -231,6 +237,11 @@ pre.code-block {
   white-space: pre;
   box-shadow: 5px 5px 5px rgba(170, 170, 170, 0.3);
   margin-bottom: 1em;
+}
+pre.code-block code {
+  background: none;
+  border: none;
+  padding: 0;
 }
 .docs .dox {
   border-top: 7px solid #D47C7C;
@@ -318,14 +329,6 @@ tbody tr:hover td {
 }
 .readme tbody tr:hover td {
   background: none;
-}
-pre,
-tt,
-code {
-  font-size: 0.8rem;
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
-  margin: 0;
-  padding: 0;
 }
 pre.code_stats {
   padding: 0;
