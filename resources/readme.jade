@@ -24,9 +24,11 @@ html
     link( rel='stylesheet', media='all', href="#{root_path}assets/prettify.css" )
     script
       window.addEventListener('DOMContentLoaded', function(e) {
-        var items = document.querySelectorAll('.source-block, .code-block');
+        var items = document.querySelectorAll('pre');
         Array.prototype.forEach.call(items, function (item) {
-          item.classList.add('prettyprint');
+          if (item.querySelectorAll('code').length > 0) {
+            item.classList.add('prettyprint');
+          }
         });
         prettyPrint();
       });
@@ -55,7 +57,7 @@ html
       div
       if code_stats
         h3 Stats
-        pre.code-block !{code_stats}
+        pre.prettyprint !{code_stats}
 
       h3 Files
       ul#artifacts

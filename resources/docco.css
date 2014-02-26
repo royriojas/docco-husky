@@ -229,7 +229,9 @@ code {
   border: 1px solid #dedede;
   padding: .1em 0.3em;
 }
-pre.code-block {
+.readme pre.prettyprint,
+.docs pre.prettyprint,
+.content pre.prettyprint {
   background: rgba(255, 251, 247, 0.63);
   border-left: 7px solid #9cc6d3;
   font-size: 0.8rem;
@@ -238,7 +240,14 @@ pre.code-block {
   box-shadow: 5px 5px 5px rgba(170, 170, 170, 0.3);
   margin-bottom: 1em;
 }
-pre.code-block code {
+.readme pre.prettyprint code,
+.docs pre.prettyprint code,
+.content pre.prettyprint code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.code code {
   background: none;
   border: none;
   padding: 0;
