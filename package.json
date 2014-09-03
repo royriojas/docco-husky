@@ -46,8 +46,6 @@
   "bin": {
     "docco-husky": "./bin/generate"
   },
-  "scripts": {
-    "install": "scripts/install.sh"
-  },
+  "scripts": {},
   "optionalDependencies": {}
 }
