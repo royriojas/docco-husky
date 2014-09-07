@@ -39,6 +39,7 @@
     "marked": "~0.3.1",
     "glob-expand": "0.0.2"
   },
+  "devDependencies" : {},
   "directories": {
     "lib": "./lib"
   },
@@ -47,5 +48,11 @@
     "docco-husky": "./bin/generate"
   },
   "scripts": {},
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "docco_husky": {
+    "content_dir": "md",
+    "output_dir": "./documentation",
+    "project_name": "docco-husky",
+    "show_timestamp": true
+  }
 }

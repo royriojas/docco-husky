@@ -71,7 +71,7 @@ html
           li
             a.source(class="#{this_class}", href="#{root_path}#{source.path}.html")
               span.file_name #{source.name}
-      - var deps = Object.keys(package_json.dependencies).length > 0;
+      - var deps = Object.keys(package_json.dependencies || {}).length > 0;
       if deps
         h3 Dependencies
         ul
@@ -79,7 +79,7 @@ html
             li
               b #{key}:
               span #{dep}
-      - deps = Object.keys(package_json.devDependencies).length > 0;
+      - deps = Object.keys(package_json.devDependencies || {}).length > 0;
       if deps
         h3 Dev Dependencies
         ul
