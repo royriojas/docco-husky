@@ -15,6 +15,7 @@ body {
   word-wrap: break-word;
   color: #555;
 }
+
 a {
   color: #46AFEB;
 }
@@ -202,6 +203,11 @@ th.docs {
   vertical-align: top;
   text-align: left;
 }
+
+td.docs {
+  font-size: 85%;
+}
+
 .docs .filepath {
   margin-top: -10px;
   margin-left: 25px;
@@ -245,10 +251,8 @@ code {
   padding: 0;
 }
 .docs .dox {
-  //border-top: 7px solid #D47C7C;
-  background: rgba(255, 251, 247, 0.63);
-  padding: .8em 1em;
-  box-shadow: 5px 4px 20px rgba(170, 170, 170, 0.7);
+  background: rgba(243, 243, 243, 0.63);
+  padding: 1em 1.4em;
   margin-bottom: 1.2em;
 }
 .docs .dox .dox_tag_title {
@@ -304,6 +308,10 @@ thead td.docs h1,
 thead th.docs h1 {
   font-size: 1.5rem;
 }
+thead th.docs h1 {
+  font-size:2.25rem;
+  border-bottom: none;
+}
 thead td.code,
 thead th.code,
 thead th.docs,
@@ -350,6 +358,10 @@ pre.code_stats {
 #readme-container {
   padding: 2em 3em;
   padding-top: 1px;
+}
+
+.source-block {
+  line-height: 18px;
 }
 
 @import 'markdown';
