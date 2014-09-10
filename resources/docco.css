@@ -1,43 +1,19 @@
-/*
- KWL Base mixins
-*/
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 html {
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 16px;
 }
 html * {
   box-sizing: border-box;
 }
 /*--------------------- Layout and Typography ----------------------------*/
 body {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
   margin: 0;
   padding: 0;
-  line-height: 1.7em;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  color: #555;
 }
 a {
   color: #46AFEB;
@@ -59,7 +35,7 @@ h5,
 h6 {
   margin: 1em 0 .6em 0;
   line-height: 1.2em;
-  color: #9B576A;
+  color: #444;
 }
 h1:first-child,
 h2:first-child,
@@ -69,23 +45,26 @@ h5:first-child,
 h6:first-child {
   margin-top: 0;
 }
-h1 {
-  font-size: 3.25rem;
-}
 h6 {
   font-size: 1rem;
 }
 h5 {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+}
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 13px;
 }
 ul {
   margin-bottom: 1em;
@@ -95,6 +74,18 @@ ul li {
 }
 #container {
   position: relative;
+}
+#container #page {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+#readme-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-top: none;
 }
 #background {
   position: fixed;
@@ -112,7 +103,6 @@ ul li {
   -webkit-box-shadow: 0 0 25px #777;
   -moz-box-shadow: 0 0 25px #777;
   padding: 5px 10px;
-  left: 0;
   position: fixed;
   font-size: 1.2rem;
   left: 50px;
@@ -135,7 +125,8 @@ ul li {
   vertical-align: middle;
 }
 #content {
-  padding: 2em 2.5em;
+  padding: 2.5em 3.5em;
+  padding-top: 1px;
 }
 #jump_to,
 #jump_page {
@@ -150,7 +141,9 @@ ul li {
   position: fixed;
   right: 0;
   top: 0;
-  padding: 1em 2.5em;
+  padding: 1em 1.75em;
+  font-size: .8rem;
+  z-index: 1000;
 }
 #jump_wrapper {
   padding: 0;
@@ -218,8 +211,7 @@ th.docs {
 pre,
 tt,
 code {
-  font-size: 0.8rem;
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
   margin: 0;
   padding: 0;
 }
@@ -233,11 +225,7 @@ code {
 .docs pre.prettyprint,
 .content pre.prettyprint {
   background: rgba(255, 251, 247, 0.63);
-  border-left: 7px solid #9cc6d3;
-  font-size: 0.8rem;
-  padding: .5em 1em;
   white-space: pre;
-  box-shadow: 5px 5px 5px rgba(170, 170, 170, 0.3);
   margin-bottom: 1em;
 }
 .readme pre.prettyprint code,
@@ -253,7 +241,6 @@ code {
   padding: 0;
 }
 .docs .dox {
-  border-top: 7px solid #D47C7C;
   background: rgba(255, 251, 247, 0.63);
   padding: .8em 1em;
   box-shadow: 5px 4px 20px rgba(170, 170, 170, 0.7);
@@ -356,4 +343,431 @@ pre.code_stats {
 }
 #readme-container {
   padding: 2em 3em;
+  padding-top: 1px;
+}
+#page,
+#readme-container {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+#page > *:first-child,
+#readme-container > *:first-child {
+  margin-top: 0 !important;
+}
+#page > *:last-child,
+#readme-container > *:last-child {
+  margin-bottom: 0 !important;
+}
+#page .absent,
+#readme-container .absent {
+  color: #c00;
+}
+#page .anchor,
+#readme-container .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+#page .anchor:focus,
+#readme-container .anchor:focus {
+  outline: none;
+}
+#page h1,
+#readme-container h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+#page h2,
+#readme-container h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+#page h3,
+#readme-container h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+#page h4,
+#readme-container h4 {
+  font-size: 1.25em;
+}
+#page h5,
+#readme-container h5 {
+  font-size: 1em;
+}
+#page h6,
+#readme-container h6 {
+  font-size: 1em;
+  color: #777;
+}
+#page hr,
+#readme-container hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+#page li > p,
+#readme-container li > p {
+  margin-top: 16px;
+}
+#page dl,
+#readme-container dl {
+  padding: 0;
+}
+#page dl dt,
+#readme-container dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+#page dl dd,
+#readme-container dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+#page blockquote,
+#readme-container blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+#page blockquote > :first-child,
+#readme-container blockquote > :first-child {
+  margin-top: 0;
+}
+#page blockquote > :last-child,
+#readme-container blockquote > :last-child {
+  margin-bottom: 0;
+}
+#page table,
+#readme-container table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+#page table th,
+#readme-container table th {
+  font-weight: bold;
+}
+#page table tr,
+#readme-container table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+#page table tr:nth-child(2n),
+#readme-container table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+#page img,
+#readme-container img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#page span.frame,
+#readme-container span.frame {
+  display: block;
+  overflow: hidden;
+}
+#page span.frame > span,
+#readme-container span.frame > span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+#page span.frame span img,
+#readme-container span.frame span img {
+  display: block;
+  float: left;
+}
+#page span.frame span span,
+#readme-container span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #333;
+}
+#page span.align-center,
+#readme-container span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+#page span.align-center > span,
+#readme-container span.align-center > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+#page span.align-center span img,
+#readme-container span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+#page span.align-right,
+#readme-container span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+#page span.align-right > span,
+#readme-container span.align-right > span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+#page span.align-right span img,
+#readme-container span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+#page span.float-left,
+#readme-container span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+#page span.float-left span,
+#readme-container span.float-left span {
+  margin: 13px 0 0;
+}
+#page span.float-right,
+#readme-container span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+#page span.float-right > span,
+#readme-container span.float-right > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+#page del code,
+#readme-container del code {
+  text-decoration: inherit;
+  vertical-align: text-top;
+}
+#page pre,
+#readme-container pre {
+  word-wrap: normal;
+}
+#page pre > code,
+#readme-container pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+#page .highlight,
+#readme-container .highlight {
+  margin-bottom: 16px;
+}
+#page .highlight pre,
+#readme-container .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+#page h1,
+#readme-container h1,
+#page h2,
+#readme-container h2,
+#page h3,
+#readme-container h3,
+#page h4,
+#readme-container h4,
+#page h5,
+#readme-container h5,
+#page h6,
+#readme-container h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+#page h1:hover .anchor,
+#readme-container h1:hover .anchor,
+#page h2:hover .anchor,
+#readme-container h2:hover .anchor,
+#page h3:hover .anchor,
+#readme-container h3:hover .anchor,
+#page h4:hover .anchor,
+#readme-container h4:hover .anchor,
+#page h5:hover .anchor,
+#readme-container h5:hover .anchor,
+#page h6:hover .anchor,
+#readme-container h6:hover .anchor {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+#page h1 tt,
+#readme-container h1 tt,
+#page h1 code,
+#readme-container h1 code,
+#page h2 tt,
+#readme-container h2 tt,
+#page h2 code,
+#readme-container h2 code,
+#page h3 tt,
+#readme-container h3 tt,
+#page h3 code,
+#readme-container h3 code,
+#page h4 tt,
+#readme-container h4 tt,
+#page h4 code,
+#readme-container h4 code,
+#page h5 tt,
+#readme-container h5 tt,
+#page h5 code,
+#readme-container h5 code,
+#page h6 tt,
+#readme-container h6 tt,
+#page h6 code,
+#readme-container h6 code {
+  font-size: inherit;
+}
+#page p,
+#readme-container p,
+#page blockquote,
+#readme-container blockquote,
+#page ul,
+#readme-container ul,
+#page ol,
+#readme-container ol,
+#page dl,
+#readme-container dl,
+#page table,
+#readme-container table,
+#page pre,
+#readme-container pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+#page ul,
+#readme-container ul,
+#page ol,
+#readme-container ol {
+  padding-left: 2em;
+}
+#page ul.no-list,
+#readme-container ul.no-list,
+#page ol.no-list,
+#readme-container ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+#page ul ul,
+#readme-container ul ul,
+#page ul ol,
+#readme-container ul ol,
+#page ol ol,
+#readme-container ol ol,
+#page ol ul,
+#readme-container ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#page table th,
+#readme-container table th,
+#page table td,
+#readme-container table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+#page code,
+#readme-container code,
+#page tt,
+#readme-container tt {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+#page code:before,
+#readme-container code:before,
+#page code:after,
+#readme-container code:after,
+#page tt:before,
+#readme-container tt:before,
+#page tt:after,
+#readme-container tt:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+#page code br,
+#readme-container code br,
+#page tt br,
+#readme-container tt br {
+  display: none;
+}
+#page .highlight pre,
+#readme-container .highlight pre,
+#page pre,
+#readme-container pre {
+  overflow: auto;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 16px 24px;
+}
+#page pre code,
+#readme-container pre code,
+#page pre tt,
+#readme-container pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+#page pre code:before,
+#readme-container pre code:before,
+#page pre code:after,
+#readme-container pre code:after,
+#page pre tt:before,
+#readme-container pre tt:before,
+#page pre tt:after,
+#readme-container pre tt:after {
+  content: normal;
 }
