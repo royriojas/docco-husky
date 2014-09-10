@@ -1,6 +1,6 @@
 {
-  "name": "docco-husky",
-  "description": "Generated static project documentation primarily for node.js projects. A fork of Docco",
+  "name": "docco-husky-plus",
+  "description": "Generated static project documentation primarily for node.js projects. A fork of Docco-husky modified to use marked instead of showdown and prettyprint instead of pygments",
   "keywords": [
     "documentation",
     "docs",
@@ -8,7 +8,7 @@
     "coffeescript"
   ],
   "author": "Mike Brevoort <mike@brevoort.com>",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "licenses": [
     {
       "type": "MIT",
@@ -23,11 +23,11 @@
     "node": ">=0.4.0"
   },
   "bugs": {
-    "url": "https://github.com/mbrevoort/docco-husky/issues"
+    "url": "https://github.com/royriojas/docco-husky/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mbrevoort/docco-husky.git"
+    "url": "git://github.com/royriojas/docco-husky.git"
   },
   "dependencies": {
     "dox": "git://github.com/royriojas/dox",
@@ -37,9 +37,6 @@
     "escape-html": "~1.0.1",
     "marked": "~0.3.1",
     "glob-expand": "0.0.2"
-  },
-  "devDependencies" : {
-    "coffee-script": "latest"
   },
   "directories": {
     "lib": "./lib"
