@@ -8,7 +8,7 @@
     "coffeescript"
   ],
   "author": "Mike Brevoort <mike@brevoort.com>",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "licenses": [
     {
       "type": "MIT",
@@ -56,6 +56,10 @@
   "devDependencies": {
     "build-workflow": "0.0.21",
     "grunt": "~0.4.5",
-    "grunt-bump": "0.0.15"
+    "grunt-bump": "0.0.15",
+    "grunt-ez-frontend": "~0.2.21",
+    "es6-promise": "~1.0.0",
+    "time-grunt": "~1.0.0",
+    "matchdep": "~0.3.0"
   }
 }
