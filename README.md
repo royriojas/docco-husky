@@ -1,3 +1,11 @@
+# Important
+
+This is a fork of `docco-husky`. The main differences are that this is using [prettify](https://code.google.com/p/google-code-prettify/) to 
+do the syntax highlighting and also the `cloc/perl` part is removed you can get a better report of lines of code and 
+code complexity with [grunt-plato](https://www.npmjs.org/package/grunt-plato).
+ 
+Also I aim to rewrite this back in javascript... Just for fun (And because nowadays "you might not need coffeescript")
+
 Overview
 --------
 
@@ -21,19 +29,19 @@ Installation
 
 ### Possible Gotchas
 
-* Docco requires [Pygments](http://pygments.org/) to be installed and will try to install it if it's not already. 
-* Perl is required for [cloc](http://cloc.sourceforge.net/)
+* ~~Docco requires [Pygments](http://pygments.org/) to be installed and will try to install it if it's not already.~~ 
+  This fork uses [prettify](https://code.google.com/p/google-code-prettify/) to do the source syntax highlighting. 
+* ~~Perl is required for [cloc](http://cloc.sourceforge.net/)~~. This fork removes this. You can use [grunt-plato](https://www.npmjs.org/package/grunt-plato)
 
 To install via npm into your project:
 
-	npm install docco-husky
+	npm install docco-husky-plus
 
 Install globally:
 
-	[sudo] npm install -g docco-husky
+	[sudo] npm install -g docco-husky-plus
 
 Or include as a dependency in your package.json
-
 
 Generating Documentation
 ------------------------

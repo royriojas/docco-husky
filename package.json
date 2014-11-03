@@ -4,8 +4,7 @@
   "keywords": [
     "documentation",
     "docs",
-    "generator",
-    "coffeescript"
+    "generator"
   ],
   "author": "Mike Brevoort <mike@brevoort.com>",
   "version": "0.4.3",
@@ -45,7 +44,6 @@
   "bin": {
     "docco-husky": "./bin/generate"
   },
-  "scripts": {},
   "optionalDependencies": {},
   "docco_husky": {
     "content_dir": "md",

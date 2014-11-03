@@ -25,7 +25,7 @@ html
     script
       window.addEventListener('DOMContentLoaded', function(e) {
         var items = document.querySelectorAll('pre');
-        Array.prototype.forEach.call(items, function (item) {
+        [].forEach.call(items, function (item) {
           if (item.querySelectorAll('code').length > 0) {
             item.classList.add('prettyprint');
           }
@@ -55,9 +55,6 @@ html
           h3 Repository
           p #{package_json.repository.type} - #{package_json.repository.url}
       div
-      if code_stats
-        h3 Stats
-        pre.prettyprint !{code_stats}
 
       h3 Files
       ul#artifacts
