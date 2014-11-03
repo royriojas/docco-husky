@@ -16,7 +16,7 @@ module.exports = function (grunt, pkg, opts) {
           sources: grunt.file.expand(data.src)
         });
 
-        options.docFiles = grunt.file.expand(data.docFiles)
+        options.docFiles = grunt.file.expand(data.docFiles);
 
         var done = me.async();
 
