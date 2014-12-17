@@ -29,7 +29,7 @@
     "url": "git://github.com/royriojas/docco-husky.git"
   },
   "dependencies": {
-    "dox": "git://github.com/royriojas/dox",
+    "dox": "https://github.com/royriojas/dox/tarball/master",
     "jade": "0.17.0",
     "gravatar": "1.0.3",
     "underscore": "1.2.x",
